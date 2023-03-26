@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE  beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+    <bean id="dao" class="dao.CreditDao">
+    </bean>
+
+    <bean id="service"  class="service.CreditMetier">
+        <property name="creditDao"  ref="dao" > </property>
+    </bean>
+
+    <bean id="presentation"  class="presentation.CreditControleur">
+        <property name="creditMetier" ref="service"> </property>
+    </bean>
+
+</beans>
